@@ -1,0 +1,46 @@
+{
+  "name": "ssv-webapp",
+  "version": "1.0.0",
+  "description": "A well-organized, fluid, and customizable web application made for a start-up company named Starlight Sonata Ventures.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --testEnvironment=node --runInBand ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WSUCptSCapstone-Fall2021Spring2022/ssv-webapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WSUCptSCapstone-Fall2021Spring2022/ssv-webapp/issues"
+  },
+  "homepage": "https://github.com/WSUCptSCapstone-Fall2021Spring2022/ssv-webapp#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jest": "^27.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.1.3",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.15",
+    "speakeasy": "^2.0.0"
+  },
+  "jest": {
+    "testMatch": [
+      "***/tests/**/*.js?(x)",
+      "**/?(*.)(spec|test).js?(x)"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "mongodb-memory-server": "^8.0.2",
+    "supertest": "^6.1.6"
+  }
+}

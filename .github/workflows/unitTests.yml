@@ -1,0 +1,43 @@
+name: Unit Tests
+
+#Currently set for any push
+on: push
+
+jobs:
+  # Job number 1: Testing within Chrome invironment
+  Testing-with-Chrome:
+    runs-on: ubuntu-latest
+
+    #Centralizing directories that will need dependencies updated
+    env:
+      client-dir: ./app/client
+      server-dir: ./app/server
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+        with:
+          persist-credentials: false
+
+        #Running the actual tests
+        #We need to build and start our server as written in package.json
+        #cypress-io/github-action@v2 handles installing dependencies
+      - name: Running Tests
+        uses: cypress-io/github-action@v2
+        timeout-minutes: 10
+        with:
+          build: npm run build
+          start: npm start
+          working-directory: ${{env.client-dir}}
+          wait-on: http://localhost:3000/
+          browser: chrome
+    # End of job 1
+  Testing-Backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Tests
+        run: |
+          cd ./app/server
+          npm install 
+          npm test
